@@ -1,14 +1,12 @@
 function App() {
 	return (
-		<>
+		<main>
 			<Bill />
-			<Service input={'serviceInput'}>
-				How much did you like the service?
-			</Service>
-			<Service input={'friendServiceInput'}>
+			<Service id={'serviceInput'}>How much did you like the service?</Service>
+			<Service id={'friendServiceInput'}>
 				How much did your friend like the service?
 			</Service>
-		</>
+		</main>
 	);
 }
 
@@ -16,7 +14,7 @@ function Bill() {
 	return (
 		<div>
 			<label htmlFor='billInput'>How much was the bill?</label>
-			<input></input>
+			<input id='billInput'></input>
 		</div>
 	);
 }
@@ -24,8 +22,8 @@ function Bill() {
 function Service(props) {
 	return (
 		<div>
-			<label htmlFor={props.input}>{props.children}</label>
-			<input></input>
+			<label htmlFor={props.id}>{props.children}</label>
+			<input id={props.id}></input>
 		</div>
 	);
 }
